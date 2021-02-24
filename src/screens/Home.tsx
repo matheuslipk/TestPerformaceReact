@@ -16,6 +16,11 @@ const Home = ({navigation}: any) => {
           onPress={() => navigation.navigate('InputsHookState')}>
           <Text style={styles.textBtn}>Inputs Hookstate</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={() => navigation.navigate('AsyncState')}>
+          <Text style={styles.textBtn}>Async State</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -26,7 +31,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flex: 1,
     alignItems: 'center',
-    // justifyContent: 'space-evenly',
+    justifyContent: 'space-evenly',
   },
   btn: {
     display: 'flex',

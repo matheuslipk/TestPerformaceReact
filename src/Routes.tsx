@@ -4,6 +4,7 @@ import React from 'react';
 import Home from './screens/Home';
 import InputsHookState from './screens/InputsHookState';
 import InputsTradicional from './screens/InputsTradicional';
+import AsyncState from './screens/AsyncState';
 
 const Stack = createStackNavigator();
 const Routes = () => (
@@ -22,6 +23,13 @@ const Routes = () => (
         component={InputsTradicional}
         options={{
           headerTitle: 'Inputs Tradicional',
+        }}
+      />
+      <Stack.Screen
+        name="AsyncState"
+        component={AsyncState}
+        options={{
+          headerTitle: 'Async State',
         }}
       />
     </Stack.Navigator>
