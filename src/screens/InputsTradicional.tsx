@@ -4,8 +4,8 @@ import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {getNumberPrimes} from '../utils/prime_numbers';
 
-const LargeForm = () => {
-  const arrayString = Array.from(Array(10).keys()).map((i) => `Input ${i + 1}`);
+const InputsTradicional = () => {
+  const arrayString = Array.from(Array(10).keys()).map((i) => `${i}`);
   const [state, setState] = React.useState(arrayString);
   return (
     <SafeAreaView>
@@ -32,7 +32,7 @@ function MyInput({state, index, setState}: any) {
     setState(stateCopy);
   };
 
-  const numbers = true && getNumberPrimes(50000);
+  const numbers = getNumberPrimes(50000);
 
   return (
     <View style={{display: 'flex', flexDirection: 'column', marginTop: 5}}>
@@ -42,7 +42,7 @@ function MyInput({state, index, setState}: any) {
         style={{backgroundColor: '#fff', padding: 10}}
       />
       <Text>
-        Renderizado em: {new Date().toISOString()} - ({numbers?.length})
+        Updated At: {new Date().toISOString()} - ({numbers.length})
       </Text>
     </View>
   );
@@ -51,9 +51,9 @@ function MyInput({state, index, setState}: any) {
 function JsonDump({state}: {state: string[]}) {
   return (
     <View>
-      <Text>{JSON.stringify(state.slice(0, 2), undefined, 4)}</Text>
+      <Text>{JSON.stringify(state.slice(0, 4), undefined, 4)}</Text>
     </View>
   );
 }
 
-export default LargeForm;
+export default InputsTradicional;

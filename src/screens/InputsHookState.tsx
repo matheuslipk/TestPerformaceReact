@@ -6,7 +6,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {getNumberPrimes} from '../utils/prime_numbers';
 
 const InputsHookstate = () => {
-  const arrayString = Array.from(Array(10).keys()).map((i) => `Input ${i + 1}`);
+  const arrayString = Array.from(Array(10).keys()).map((i) => `${i}`);
   const state = useState(arrayString);
 
   return (
@@ -23,7 +23,9 @@ const InputsHookstate = () => {
 
 function MyInput({fieldState}: {fieldState: State<string>}) {
   const scoped = useState(fieldState);
-  const numbers = true && getNumberPrimes(50000);
+
+  const numbers = getNumberPrimes(50000);
+
   return (
     <View style={{display: 'flex', flexDirection: 'column', marginTop: 5}}>
       <TextInput
@@ -42,7 +44,7 @@ function JsonDump(props: {state: State<string[]>}) {
   const state = useState(props.state);
   return (
     <View>
-      <Text>{JSON.stringify(state.get().slice(0, 2), undefined, 4)}</Text>
+      <Text>{JSON.stringify(state.get().slice(0, 4), undefined, 4)}</Text>
     </View>
   );
 }

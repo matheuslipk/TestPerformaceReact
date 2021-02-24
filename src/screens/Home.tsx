@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    // justifyContent: 'space-evenly',
   },
   btn: {
     display: 'flex',
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     width: 200,
     padding: 5,
     backgroundColor: '#738',
+    marginTop: 10,
   },
   textBtn: {
     color: '#fff',
